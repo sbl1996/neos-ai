@@ -1,8 +1,8 @@
 {
   "compilerOptions": {
-    "target": "es2020",
-    "lib": ["es2020"],
-    "module": "es2020",
+    "target": "ESNext",
+    "lib": ["ESNext"],
+    "module": "ESNext",
     "moduleResolution": "node",
     "outDir": "./dist",
     "rootDir": "./src",
@@ -28,7 +28,12 @@
     }
   },
   "include": [
-    "src",
+    "src/**/*.ts",
   ],
-  "exclude": ["node_modules", "**/*.spec.ts"]
+  "exclude": ["node_modules", "**/*.spec.ts", "dist"],
+  "ts-node": {
+    "esm": true,
+    "compiler": "typescript",
+    "experimentalSpecifierResolution": "node"
+  }  
 }

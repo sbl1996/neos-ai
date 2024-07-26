@@ -3,10 +3,9 @@
   "version": "1.0.0",
   "private": true,
   "type": "module",
-  "main": "src/main.ts",
   "scripts": {
     "start": "node dist/main.js",
-    "dev": "npm run wasm && nodemon src/main.ts",
+    "dev": "nodemon --exec node --no-warnings=ExperimentalWarning --loader ts-node/esm src/main.ts",
     "build": "tsc && cp -r neos-assets dist/",
     "wasm": "wasm-pack build ./rust-src --target web",
     "test": "echo \"Error: no test specified\" && exit 1",
